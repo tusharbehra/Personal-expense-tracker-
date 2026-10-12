@@ -4,7 +4,7 @@
 expenses = []
 
 def addexpense():
-    print("\n--- add expense ---")
+    print("--- add expense ---")
 
     name = input("enter expense name: ")
 
@@ -21,13 +21,13 @@ def addexpense():
     print("expense added successfully.")
 
 def viewexpenses():
-    print("\n--- expense List ---")
+    print("--- expense List ---")
 
     if len(expenses) == 0:
         print("no expenses recorded.")
         return
 
-    print("\nno.   Expense              Amount")
+    print("no.   Expense              Amount")
     print("-----------------------------------")
 
     for i in range(len(expenses)):
@@ -35,7 +35,7 @@ def viewexpenses():
               "          Rs.", expenses[i]["amount"])
 
 def deleteexpense():
-    print("\n--- Delete Expense ---")
+    print("--- Delete Expense ---")
 
     if len(expenses) == 0:
         print("No expenses to delete.")
@@ -44,7 +44,7 @@ def deleteexpense():
     viewexpenses()
 
 
-    number = int(input("\nEnter expense number to delete: "))
+    number = int(input("Enter expense number to delete: "))
 
     if number < 1 or number > len(expenses):
         print("Invalid expense number.")
@@ -59,11 +59,11 @@ def totalexpense():
     for expense in expenses:
         total = total + expense["amount"]
 
-    print("\nTotal Expense: Rs.", total)
+    print("Total Expense: Rs.", total)
 
 def highestexpense():
     if len(expenses) == 0:
-        print("\nNo expenses recorded.")
+        print("No expenses recorded.")
         return
 
     highest = expenses[0]
@@ -72,15 +72,15 @@ def highestexpense():
         if expense["amount"] > highest["amount"]:
             highest = expense
 
-    print("\nhighest Expense:")
+    print("highest Expense:")
     print("name   :", highest["name"])
     print("Amount : Rs.", highest["amount"])
 
 def expensecount():
-    print("\nNumber of expenses:", len(expenses))
+    print("Number of expenses:", len(expenses))
 
 def showsummary():
-    print("\n--- Expense Summary ---")
+    print("--- Expense Summary ---")
 
     if len(expenses) == 0:
         print("No expenses recorded.")
@@ -104,10 +104,10 @@ def showsummary():
 
 def clearexpenses():
     if len(expenses) == 0:
-        print("\nthere are no expenses to clear.")
+        print("there are no expenses to clear.")
         return
 
-    choice = input( "\nare you sure you want to delete all expenses? (y/n): ")
+    choice = input( "are you sure you want to delete all expenses? (y/n): ")
 
     if choice == "y" or choice == "Y":
         expenses.clear()
@@ -119,7 +119,7 @@ def main():
 
     while True:
 
-        print("\n___________________________________")
+        print("___________________________________")
         print("       PERSONAL EXPENSE TRACKER")
         print("_____________________________________")
 
@@ -160,9 +160,9 @@ def main():
             clearexpenses()
 
         elif choice == "9":
-            print("\nthank you for using Personal Expense Tracker.")
+            print("thank you for using Personal Expense Tracker.")
             break
 
         else:
-            print("\ninvalid choice. Please try again.")
+            print("invalid choice. Please try again.")
 main()
